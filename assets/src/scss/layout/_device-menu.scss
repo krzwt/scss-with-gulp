@@ -7,7 +7,6 @@ $menulevel1: 18px;
 $menulevel2: 16px;
 $menulevel3: 14px;
 $hamburger: ".hamburger";
-$humburgerBase: 30px;
 
 // Humburger
 #{$hamburger} {
@@ -97,15 +96,6 @@ $humburgerBase: 30px;
 
     @include respond-below(lg) {
         display: block;
-    }
-
-    &.is-open {
-        .btn-wrap {
-            transform: translateY(0);
-        }
-        + header {
-            // position: fixed;
-        }
     }
 
     &__state {
@@ -391,10 +381,15 @@ $humburgerBase: 30px;
 
     // after open
     &.is-open {
+        + header {
+            // position: fixed;
+        }
+        .btn-wrap {
+            transform: translateY(0);
+        }
         #{$mbnav}__state {
             left: 0;
         }
-
         #{$mbnav}__backdrop {
             opacity: 1;
             z-index: 999;
